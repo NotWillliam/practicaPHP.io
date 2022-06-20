@@ -266,6 +266,11 @@ function myTimer() {
 		  onDetectBrand: function(brands){
 				
       }
+      
+       '<div class="aja">' +
+              '<button type="button" onclick="history.back()" class="btn btn-success" >Regresar</button>' +
+       '</div>';
+      
 </script>
 
 

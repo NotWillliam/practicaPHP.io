@@ -61,7 +61,7 @@ $_SESSION['merchterm'] = $merchterm;
 
 
 
-function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_nombre) {
+function request($items, $total,$iva,$totaTarifa12,$totalBase0,$merchterm ) {
 	$finger = urlencode($finger);
 	$i = 0;
 	$url = "https://test.oppwa.com/v1/checkouts";

@@ -84,10 +84,10 @@ function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_n
 		
 	foreach ($items["cart"] as $c) {
 		$variable.= "&cart.items[";
-		$data.= variable.$i."].name=".$c["product_name"];
-		$data.= variable.$i."].description="."Descripcion: ".$c["product_name"];
-		$data.= variable.$i."].price=".$c["product_price"];
-		$data.= variable.$i."].quantity=".$c["q"];		
+		$data.= $variable.$i."].name=".$c["product_name"];
+		$data.= $variable.$i."].description="."Descripcion: ".$c["product_name"];
+		$data.= $variable.$i."].price=".$c["product_price"];
+		$data.= $variable.$i."].quantity=".$c["q"];		
 		$i++;
 	}
 	

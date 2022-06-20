@@ -75,16 +75,16 @@ function request($items, $total,$iva,$totaTarifa12,$totalBase0,$merchterm ) {
 		"&amount=".$total.
 		"&currency=USD".
 		"&paymentType=DB".
-		"&customer.givenName=".$primer_nombre.
+		
 		
 		/*"&recurringType=INITIAL".*/
 		"&risk.parameters[USER_DATA2]=DATAFAST".
 		"&customParameters[SHOPPER_VERSIONDF]=2".
 		"&customParameters[".$merchterm."]=00810030070103910004012".$valueIva."05100817913101052012".$valueTotalBase0."053012".$valueTotalIva;
 		
-	$variable.= "&cart.items[";
+	
 	foreach ($items["cart"] as $c) {
-		
+		$variable.= "&cart.items[";
 		$data.= $variable.$i."].name=".$c["product_name"];
 		$data.= $variable.$i."].description="."Descripcion: ".$c["product_name"];
 		$data.= $variable.$i."].price=".$c["product_price"];

@@ -129,7 +129,7 @@ $total = $totalBaseIva + $iva + $totalBase0; //Monto total de la transaccion
 $total = number_format((float)$total, 2, '.', '');
 
 
-$responseData = request($items_details, $total,$iva,$totalBaseIva,$totalBase0, $email, $primer_nombre);
+$responseData = request($items_details, $total,$iva,$totalBaseIva,$totalBase0, $email);
 
 ?>
 <!DOCTYPE html>

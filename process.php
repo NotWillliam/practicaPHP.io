@@ -129,8 +129,7 @@ $total = $totalBaseIva + $iva + $totalBase0; //Monto total de la transaccion
 $total = number_format((float)$total, 2, '.', '');
 
 
-$responseData = request($items_details, $total,$iva,$totalBaseIva,$totalBase0, $email, $primer_nombre, $segundo_nombre, $apellido,$cedula, $trx, $ip_address, $finger,$merchterm, $telefono, $direccion_cliente, $pais_cliente, $direccion_entrega, $pais_entrega);
-$json = json_decode($responseData, true);
+$responseData = request($items_details, $total,$iva,$totalBaseIva,$totalBase0, $email, $primer_nombre);
 
 ?>
 <!DOCTYPE html>

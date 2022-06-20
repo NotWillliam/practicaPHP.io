@@ -61,8 +61,7 @@ $_SESSION['merchterm'] = $merchterm;
 
 
 
-function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_nombre, $segundo_nombre, $apellido, $cedula, $trx,$ip_address, $finger,$merchterm,
-	$telefono, $direccion_cliente, $pais_cliente, $direccion_entrega, $pais_entrega) {
+function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_nombre) {
 	$finger = urlencode($finger);
 	$i = 0;
 	$url = "https://test.oppwa.com/v1/checkouts";
@@ -77,30 +76,18 @@ function request($items, $total,$iva,$totaTarifa12,$totalBase0,$email, $primer_n
 		"&currency=USD".
 		"&paymentType=DB".
 		"&customer.givenName=".$primer_nombre.
-		"&customer.middleName=".$segundo_nombre.
-		"&customer.surname=".$apellido.
-		"&customer.ip=".$ip_address.
-		"&customer.merchantCustomerId=000000000001".
-		"&merchantTransactionId=transaction_".$trx.		
-		"&customer.email=".$email.
-		"&customer.identificationDocType=IDCARD".		
-		"&customer.identificationDocId=".$cedula.
-		"&customer.phone=".$telefono.
-		"&billing.street1=".$direccion_cliente.
-		"&billing.country=".$pais_cliente.
-		"&shipping.street1=".$direccion_entrega.
-		"&shipping.country=".$pais_entrega.
+		
 		/*"&recurringType=INITIAL".*/
 		"&risk.parameters[USER_DATA2]=DATAFAST".
 		"&customParameters[SHOPPER_VERSIONDF]=2".
 		"&customParameters[".$merchterm."]=00810030070103910004012".$valueIva."05100817913101052012".$valueTotalBase0."053012".$valueTotalIva;
 		
 	foreach ($items["cart"] as $c) {
-		
-		$data.= "&cart.items[".$i."].name=".$c["product_name"];
-		$data.= "&cart.items[".$i."].description="."Descripcion: ".$c["product_name"];
-		$data.= "&cart.items[".$i."].price=".$c["product_price"];
-		$data.= "&cart.items[".$i."].quantity=".$c["q"];		
+		$variable.= "&cart.items[";
+		$data.= variable.$i."].name=".$c["product_name"];
+		$data.= variable.$i."].description="."Descripcion: ".$c["product_name"];
+		$data.= variable.$i."].price=".$c["product_price"];
+		$data.= variable.$i."].quantity=".$c["q"];		
 		$i++;
 	}
 	
